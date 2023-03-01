@@ -33,6 +33,14 @@ func getStudentDataById(id string) (Student, error) {
 	return s, err
 }
 
+func (studentData Student) showStudentData(){
+	fmt.Println("ID:\t", studentData.ID)
+	fmt.Println("Name:\t", studentData.Name)
+	fmt.Println("Address:", studentData.Address)
+	fmt.Println("Job:\t", studentData.Job)
+	fmt.Println("Reason:\t", studentData.Reason)
+}
+
 var students []Student = []Student{
 	{
 		ID: "S1",
@@ -73,9 +81,5 @@ func main() {
 		log.Fatal(err)
 	}
 
-	fmt.Println("ID:\t", studentData.ID)
-	fmt.Println("Name:\t", studentData.Name)
-	fmt.Println("Address:", studentData.Address)
-	fmt.Println("Job:\t", studentData.Job)
-	fmt.Println("Reason:\t", studentData.Reason)
+	studentData.showStudentData()
 }
